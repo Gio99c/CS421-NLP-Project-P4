@@ -414,7 +414,7 @@ def sentiment_analysis_state(model, word2vec, first_time=False):
     w2v_test = string2vec(word2vec, user_input)
 
     label = None
-    # label = mlp.predict(w2v_test.reshape(1, -1)) # Use this if you select one of the other models (swap mlp for svm, etc.)
+    label = mlp.predict(w2v_test.reshape(1, -1)) # Use this if you select one of the other models (swap mlp for svm, etc.)
 
     if label == 0:
         print("Hmm, it seems like you're feeling a bit down.")
@@ -423,7 +423,7 @@ def sentiment_analysis_state(model, word2vec, first_time=False):
     else:
         print("Hmm, that's weird.  My classifier predicted a value of: {0}".format(label))
 
-    return check_next_state()
+    return "stylistic_analysis" if first_time else check_next_state()
 
 
 # Function: stylistic_analysis_state
