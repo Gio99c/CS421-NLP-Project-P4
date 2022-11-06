@@ -181,7 +181,7 @@ def instantiate_models():
 
     logistic = LogisticRegression(random_state=100)
     svm = LinearSVC(random_state=100)
-    mlp = MLPClassifier(random_state=100)
+    mlp = MLPClassifier(random_state=100, max_iter=1000)
 
     return logistic, svm, mlp
 
