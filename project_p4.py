@@ -27,6 +27,8 @@ import string
 import re
 import csv
 import nltk
+nltk.download('punkt', quiet=True)
+nltk.download('averaged_perceptron_tagger', quiet=True)
 
 
 # Before running code that makes use of Word2Vec, you will need to download the provided w2v.pkl file
